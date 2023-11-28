@@ -10,10 +10,15 @@ login.addEventListener("click", (e) => {
     encontraUsuario(obj)
 })
 function encontraUsuario(value){
-    var usuario = userLogin.find((obj) => obj.email === value.email)
-    if(usuario.senha === value.senha){
-        window.location.href == "127.0.0.1:5000/homeUsuario.html"
-     }else{
-        alert("Deu ruim! Para o e-mail: "+value.email)
-     }
+    if(value.email != "" && senha.value != ""){
+        var usuario = userLogin.find((obj) => obj.email === value.email)
+        if(usuario.senha === value.senha){
+            window.location.href == "127.0.0.1:5000/homeUsuario.html"
+         }else{
+            alert("Deu ruim! Para o e-mail: "+value.email)
+         }
+    }else{
+        alert("Preencha os campos")
+    }
+    
 }
